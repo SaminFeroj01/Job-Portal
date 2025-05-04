@@ -1,0 +1,50 @@
+.upload-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .upload-box {
+    background: #f1f7ff;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  .upload-box input[type="file"] {
+    margin-top: 10px;
+  }
+  
+  .upload-box .btn {
+    margin-top: 10px;
+  }
+  
+  .profile-strength {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 30px;
+    background-color: #004aad;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    transition: width 0.5s ease;
+  }
+  
