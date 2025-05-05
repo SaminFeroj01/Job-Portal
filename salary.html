@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Salary Estimator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Job Portal</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="companies.html">Companies</a>
+        <a href="resume.html">Upload Resume</a>
+        <a href="salary.html">Salary</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="form-container">
+    <h2>Salary Insights</h2>
+    <label>Choose Role:</label>
+    <select id="role">
+      <option value="80000">Software Engineer</option>
+      <option value="90000">Data Scientist</option>
+      <option value="70000">UI/UX Designer</option>
+    </select>
+
+    <label>Choose Location:</label>
+    <select id="location">
+      <option value="1.2">New York</option>
+      <option value="1.0">Austin</option>
+      <option value="0.9">Remote</option>
+    </select>
+
+    <button onclick="estimateSalary()">Estimate</button>
+    <p id="salaryOutput"></p>
+
+    <h3>Benefits Comparison</h3>
+    <ul>
+      <li>Acme Tech: Health + Dental + Remote Work</li>
+      <li>Innova Corp: Health + Gym + Learning Budget</li>
+    </ul>
+  </div>
+
+  <footer><div class="container">&copy; 2025 Job Portal</div></footer>
+
+  <script>
+    function estimateSalary() {
+      const base = parseInt(document.getElementById("role").value);
+      const multiplier = parseFloat(document.getElementById("location").value);
+      const result = (base * multiplier).toFixed(2);
+      document.getElementById("salaryOutput").textContent = `Estimated Salary: $${result}`;
+    }
+  </script>
+</body>
+</html>
