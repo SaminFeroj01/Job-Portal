@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Job Portal</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Login - Job Portal</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="signup.html">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="form-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="Enter your email" required />
+
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required />
+
+            <button type="submit">Login</button>
+            <button type="button" id="forgotPasswordBtn">Forgot Password</button>
+        </form>
+
+        <div id="reset-password" class="form-container" style="display: none;">
+            <h2>Reset Password</h2>
+            <form id="resetForm">
+                <label for="resetEmail">Email</label>
+                <input type="email" id="resetEmail" placeholder="Enter your email to reset password" required />
+                <button type="submit">Send Reset Link</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Job Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const forgotPasswordBtn = document.getElementById("forgotPasswordBtn");
+        const resetPasswordForm = document.getElementById("reset-password");
+
+        forgotPasswordBtn.addEventListener("click", () => {
+            resetPasswordForm.style.display = "block";
+            document.getElementById("loginForm").style.display = "none";
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            alert("Logged in successfully!");
+        });
+
+        document.getElementById("resetForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            alert("Password reset link sent!");
+        });
+    </script>
+
+</body>
+
+</html>

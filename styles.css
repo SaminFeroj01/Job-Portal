@@ -1,0 +1,212 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #004080;
+  color: #fff;
+  padding: 20px 0;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+nav {
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #e0f0ff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+}
+
+.hero-buttons .btn {
+  margin: 10px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.btn.primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Form Container */
+.form-container {
+  background: #fff;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-container label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 600;
+}
+
+.form-container input,
+.form-container select,
+.form-container button,
+.form-container progress {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-container button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Job Listings */
+.job-card {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #007bff;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.job-card button {
+  margin-top: 10px;
+}
+
+/* Companies */
+.company {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #28a745;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+/* Footer */
+footer {
+  background-color: #004080;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Login & Sign Up Pages */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-container input {
+  margin-bottom: 15px;
+}
+
+#reset-password {
+  display: none;
+}
+
+/* Forgot Password Button */
+button[type="button"] {
+  background-color: #f0ad4e;
+  border: 1px solid #e08e1f;
+}
+
+button[type="button"]:hover {
+  background-color: #d5852d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feature-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-container {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .form-container input {
+    font-size: 1rem;
+  }
+}
