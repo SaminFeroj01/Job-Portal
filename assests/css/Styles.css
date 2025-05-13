@@ -100,6 +100,11 @@ nav a:hover {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .form-container label {
   display: block;
   margin: 15px 0 5px;
@@ -161,20 +166,6 @@ footer {
   margin-top: 40px;
 }
 
-/* Login & Sign Up Pages */
-.form-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.form-container input {
-  margin-bottom: 15px;
-}
-
-#reset-password {
-  display: none;
-}
-
 /* Forgot Password Button */
 button[type="button"] {
   background-color: #f0ad4e;
@@ -187,11 +178,6 @@ button[type="button"]:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .feature-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
   nav a {
     display: inline-block;
     margin: 10px;
