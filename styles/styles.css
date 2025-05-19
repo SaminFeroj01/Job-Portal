@@ -286,10 +286,10 @@ img {
 
 /* Custom Caching */
 .cache-control {
-  cache-control: max-age=31536000;
+  place-content: max-age=31536000;
 }
 
-/* ফুটার সবসময় নিচে রাখতে চাইলে (body ও html-এ flex) */
+
 html, body {
   height: 100%;
 }
@@ -317,5 +317,20 @@ body {
   box-shadow: 0 2px 8px rgba(255,0,0,0.07);
 }
 .error-message p {
+  margin: 0 0 6px 0;
+}
+
+.success-message {
+  background: #ffe0e0;
+  color: #79d291;
+  border: 1px solid #ffb3b3;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  font-weight: 500;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 8px rgba(255,0,0,0.07);
+}
+.success-message p {
   margin: 0 0 6px 0;
 }

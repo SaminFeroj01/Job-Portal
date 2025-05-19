@@ -1,42 +1,20 @@
 <?php
+session_start();
 
-namespace app\controllers;
-
-
-use app\models\UserModel;
-
-class LoginController
-{
-    public function index()
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-
-            if (empty($email) || empty($password)) {
-                echo "Please fill in all login fields.";
-                return;
-            }
-
-            $emailRegex = '/\S+@\S+\.\S+/';
-            if (!preg_match($emailRegex, $email)) {
-                echo "Please enter a valid email.";
-                return;
-            }
-
-            $userModel = new UserModel();
-            $user = $userModel->getUserByEmail($email);
-
-            if ($user && password_verify($password, $user['password'])) {
-                session_start();
-                $_SESSION['user_id'] = $user['id'];
-                header('Location: /home');
-                exit;
-            } else {
-                echo "Invalid email or password.";
-            }
-        }
-
-        include __DIR__ . '/../Views/login.php';
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
+    $emailRegex = '/\S+@\S+\.\S+/';
+    if (!preg_match($emailRegex, $email)) {
+        $_SESSION['error'] = "Please enter a valid email";
+        header('Location: ../Views/login.php');
+        exit;
+    }
+    else {
+        unset($_SESSION['error']);// need to be set to null or empty string
+        $_SESSION['user'] = $email;
+        header('Location: ../Views/home2.php');
+        exit;
     }
 }
+?>

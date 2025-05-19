@@ -23,7 +23,20 @@
   <main class="main-container">
     <section class="card form-container">
       <h2>Sign Up</h2>
-      <form action="../Controllers/SignupController.php" method="POST" onsubmit="return validateSignupForm()">
+      <?php
+        session_start();
+        if (isset($_SESSION['error'])) {
+          ?>
+          <p class="error-message">
+          <?php
+          echo $_SESSION['error'];
+          ?>
+          </p>
+          <?php
+          unset($_SESSION['error']);
+        }
+        ?>
+      <form action="../Controllers/SignupController.php" method="POST">
         <label for="signup-name">Full Name</label>
         <input type="text" id="signup-name" name="name" placeholder="Enter your full name" required>
 

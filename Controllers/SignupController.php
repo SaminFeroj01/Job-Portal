@@ -1,49 +1,32 @@
 <?php
+session_start();
 
-namespace app\controllers;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = trim($_POST['name']);
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirm_password'];
 
-use app\views\View;
-use app\models\UserModel;
-
-class SignupController
-{
-    public function index()
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $confirmPassword = $_POST['confirm_password'];
-
-            if (empty($name) || empty($email) || empty($password) || empty($confirmPassword)) {
-                echo "Please fill in all signup fields.";
-                return;
-            }
-
-            $emailRegex = '/\S+@\S+\.\S+/';
-            if (!preg_match($emailRegex, $email)) {
-                echo "Please enter a valid email.";
-                return;
-            }
-
-            if ($password !== $confirmPassword) {
-                echo "Passwords do not match.";
-                return;
-            }
-
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-            $userModel = new UserModel();
-            $userModel->createUser([
-                'name' => $name,
-                'email' => $email,
-                'password' => $hashedPassword
-            ]);
-
-            header('Location: /login');
-            exit;
-        }
-
-        include __DIR__ . '/../Views/signup.php';
+    if (empty($name) || empty($email) || empty($password) || empty($confirmPassword)) {
+        $_SESSION['error'] = "All fields are required.";
+        header("Location: ../Views/signup.php");
+        exit;
     }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $_SESSION['error'] = "Invalid email format.";
+        header("Location: ../Views/signup.php");
+        exit;
+    }
+
+    if ($password !== $confirmPassword) {
+        $_SESSION['error'] = "Passwords do not match.";
+        header("Location: ../Views/signup.php");
+        exit;
+    }
+
+    $_SESSION['success'] = "Account created successfully!";
+    header("Location: ../Views/login.php");
+    exit;
 }
+?>

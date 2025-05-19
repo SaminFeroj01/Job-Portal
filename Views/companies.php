@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Redirect to login if user not logged in
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +22,13 @@
     <div class="header-container">
       <h1 class="site-title">Job Portal</h1>
       <nav class="nav-links">
-        <a href="home.php" class="nav-btn">Home</a>
-        <a href="jobs.php" class="nav-btn">Jobs</a>
-        <a href="companies.php" class="nav-btn">Companies</a>
-        <a href="resume.php" class="nav-btn">Upload Resume</a>
-        <a href="salary.php" class="nav-btn">Salary</a>
+        <a href="home2.php">Home</a>
+            <a href="jobs.php">Jobs</a>
+            <a href="companies.php">Companies</a>
+            <a href="resume.php">Upload Resume</a>
+            <a href="salary.php">Salary Insights</a>
+            <a href="application.php">Application Tracking</a>
+            <a href="../Controllers/LogoutController.php">Logout</a>
       </nav>
     </div>
   </header>
