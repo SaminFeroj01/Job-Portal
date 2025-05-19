@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Application Tracking</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles/styles.css">
 </head>
+
 <body>
+
+  <header>
+    <h1>Job Portal</h1>
+    <nav>
+      <a href="home.php">Home</a>
+      <a href="login.php">Login</a>
+    </nav>
+  </header>
+
   <div class="form-container">
     <h2>Application Tracking</h2>
 
@@ -28,4 +39,5 @@
     <button class="btn primary">Set Reminder</button>
   </div>
 </body>
+
 </html>
