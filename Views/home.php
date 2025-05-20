@@ -14,7 +14,7 @@
         <nav>
             <a href="home.php">Home</a>
             <a href="login.php">Login</a>
-            <a href="signup.php">Sign Up</a>
+            <a href="sign.php">Sign Up</a>
         </nav>
     </header>
 
@@ -22,7 +22,7 @@
         <h2>Find Your Dream Job</h2>
         <p>Connect with top companies and grow your career</p>
         <div class="hero-buttons">
-            <a href="/signup" class="btn primary">Get Started</a>
+            <a href="signup.php" class="btn primary">Get Started</a>
             <a href="/jobs" class="btn secondary">Browse Jobs</a>
         </div>
     </section>

@@ -48,6 +48,7 @@
           unset($_SESSION['success']);
         }
         ?>
+ 
       
       <form action="../Controllers/LoginController.php" method="POST" onsubmit="return validateLoginForm()">
         <label for="login-email">Email</label>
@@ -59,7 +60,13 @@
         <div id="reset-password" style="display:none;">
           <label for="reset-email">Reset Email</label>
           <input type="email" id="reset-email" name="reset_email" placeholder="Enter your email to reset password">
-          <button type="button" class="primary-btn">Send Reset Link</button>
+           <button type="button" class="primary-btn" id="resetBtn">Send Reset Link</button>
+
+  <script>
+    document.getElementById('resetBtn').addEventListener('click', function () {
+      alert('Send in your email');
+    });
+  </script>
         </div>
       </form>
     </section>

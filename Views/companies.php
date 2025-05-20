@@ -7,11 +7,11 @@ if (!isset($_SESSION['user'])) {
     exit;
 }
 
-// Dummy fallback (optional, for standalone testing)
-// $companies = [
-//     ['name' => 'TechCorp', 'culture' => 'Innovative', 'reviews' => 'Great work environment', 'open_roles' => '5'],
-//     ['name' => 'SoftWorks', 'culture' => 'Flexible', 'reviews' => 'Friendly team', 'open_roles' => '2'],
-// ];
+Dummy fallback (optional, for standalone testing)
+$companies = [
+    ['name' => 'TechCorp', 'culture' => 'Innovative', 'reviews' => 'Great work environment', 'open_roles' => '5'],
+    ['name' => 'SoftWorks', 'culture' => 'Flexible', 'reviews' => 'Friendly team', 'open_roles' => '2'],
+];
 
 // Prevent error if controller didn't provide it
 if (!isset($companies)) {
